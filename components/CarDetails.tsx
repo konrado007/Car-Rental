@@ -1,6 +1,7 @@
 "use client";
 
 import { CarProps } from "@/types";
+import { generateCarImageUrl } from "@/utils";
 import { Dialog, Transition } from "@headlessui/react";
 import Image from "next/image";
 import React from "react";
@@ -40,7 +41,7 @@ const CarDetails: React.FC<CarDetailsProps> = ({ car, isOpen, closeModal }) => {
               >
                 <Dialog.Panel
                   className="relative w-full max-w-lg 
-                max-h-[90vh] overflow-y-auto no-scrollbar transform rounded-2xl 
+                max-h-[90vh] overflow-y-auto no-scro transform rounded-2xl 
                 bg-white p-6 text-left shadow-xl transition-all flex flex-col gap-5"
                 >
                   <button
@@ -64,7 +65,7 @@ const CarDetails: React.FC<CarDetailsProps> = ({ car, isOpen, closeModal }) => {
                     "
                     >
                       <Image
-                        src="/hero.png"
+                        src={generateCarImageUrl(car, )}
                         alt=""
                         fill
                         priority
@@ -74,7 +75,7 @@ const CarDetails: React.FC<CarDetailsProps> = ({ car, isOpen, closeModal }) => {
                     <div className="flex gap-3">
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src="/hero.png"
+                          src={generateCarImageUrl(car, "29")}
                           alt=""
                           fill
                           priority
@@ -83,7 +84,7 @@ const CarDetails: React.FC<CarDetailsProps> = ({ car, isOpen, closeModal }) => {
                       </div>
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src="/hero.png"
+                          src={generateCarImageUrl(car, "33")}
                           alt=""
                           fill
                           priority
@@ -92,7 +93,7 @@ const CarDetails: React.FC<CarDetailsProps> = ({ car, isOpen, closeModal }) => {
                       </div>
                       <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                         <Image
-                          src="/hero.png"
+                          src={generateCarImageUrl(car, "13")}
                           alt=""
                           fill
                           priority
